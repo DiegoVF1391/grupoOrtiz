@@ -38,6 +38,7 @@ export default defineComponent({
 
         const fetchPokemon = async () => {
             try {
+                // Usamos la nueva ruta en nuestra aplicación para hacer la solicitud a la API de Pokémon
                 const response = await axios.get(`/api/external-pokemon?name=${pokemonName.value}`);
                 pokemonData.value = response.data;
             } catch (error) {
