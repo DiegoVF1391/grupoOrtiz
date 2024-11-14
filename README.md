@@ -44,6 +44,31 @@ DB_PASSWORD=contraseña_de_base_de_datos
 
 Asegúrate de crear la base de datos con el nombre especificado en .env.
 
+Además, intenta ingresar algunos ejemplos de manera manual con este archivo SQL:
+```bash
+-- Creación de la base de datos
+CREATE DATABASE IF NOT EXISTS `nombre_de_base_de_datos`;
+
+USE `nombre_de_base_de_datos`;
+
+-- Creación de la tabla products
+CREATE TABLE `products` (
+    `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(255) NOT NULL,
+    `description` TEXT NOT NULL,
+    `price` DECIMAL(10,2) NOT NULL,
+    `stock` INT NOT NULL,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Insertar algunos productos de ejemplo
+INSERT INTO `products` (`name`, `description`, `price`, `stock`) VALUES
+('Producto 1', 'Descripción del producto 1', 100.00, 10),
+('Producto 2', 'Descripción del producto 2', 150.50, 20),
+('Producto 3', 'Descripción del producto 3', 200.00, 30);
+```
+
 ### 4. Instalación de dependencias
 Ejecuta los siguientes comandos para instalar las dependencias del backend y del frontend:
 
