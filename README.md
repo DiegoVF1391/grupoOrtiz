@@ -18,8 +18,8 @@ Sigue estos pasos para instalar y correr el proyecto en tu entorno local:
 Primero, clona el repositorio a tu máquina local:
 
 ```bash
-git clone https://github.com/usuario/proyecto-gestion-productos.git
-cd proyecto-gestion-productos
+git clone https://github.com/DiegoVF1391/grupoOrtiz.git
+cd grupoOrtiz
 ```
 
 ### 2. Configuración del entorno
@@ -37,7 +37,7 @@ Abre el archivo .env y configura las credenciales de la base de datos:
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=nombre_de_base_de_datos
+DB_DATABASE=grupo_ortiz
 DB_USERNAME=usuario_de_base_de_datos
 DB_PASSWORD=contraseña_de_base_de_datos
 ```
