@@ -3,6 +3,11 @@
         <div class="container mx-auto py-6">
             <h2 class="text-2xl font-bold mb-6">{{ isEdit ? 'Editar Producto' : 'Crear Producto' }}</h2>
             
+            <!-- Mostrar mensajes de éxito o error -->
+            <div v-if="message" :class="{'text-green-500': isSuccess, 'text-red-500': !isSuccess}" class="mb-4">
+                {{ message }}
+            </div>
+
             <form @submit.prevent="submit" class="space-y-4 bg-white p-6 rounded-md shadow-md">
                 <div>
                     <label class="block text-gray-700 font-medium mb-2">Nombre:</label>

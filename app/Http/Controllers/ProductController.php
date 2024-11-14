@@ -16,17 +16,17 @@ class ProductController extends Controller
     // Crear un nuevo producto
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'price' => 'required|numeric|min:0',
-            'stock' => 'required|integer|min:0',
-        ]);
-
-        return Product::create($request->all());
+        Product::create(
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'description' => 'required|string',
+                'price' => 'required|numeric|min:0',
+                'stock' => 'required|integer|min:0',
+            ])
+        );
 
         // Redirige a la página de listado de productos
-        return Redirect::route('products.index')->with('success', 'Producto creado con éxito.');
+        return to_route('products.index')->with('success', 'Producto creado con éxito.');
     }
 
     // Mostrar los detalles de un producto
@@ -40,16 +40,16 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
 
-        $request->validate([
-            'name' => 'sometimes|required|string|max:255',
-            'description' => 'sometimes|required|string',
-            'price' => 'sometimes|required|numeric|min:0',
-            'stock' => 'sometimes|required|integer|min:0',
-        ]);
+        $product->update(
+            $request->validate([
+                'name' => 'sometimes|required|string|max:255',
+                'description' => 'sometimes|required|string',
+                'price' => 'sometimes|required|numeric|min:0',
+                'stock' => 'sometimes|required|integer|min:0',
+            ])
+        );
 
-        $product->update($request->all());
-
-        return $product;
+        return to_route('products.index');
     }
 
     // Eliminar un producto

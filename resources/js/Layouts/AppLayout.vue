@@ -4,8 +4,8 @@
             <div class="container mx-auto flex justify-between items-center">
                 <h1 class="text-2xl font-bold">Gestión de Productos</h1>
                 <nav class="space-x-4">
-                    <router-link href="/products" class="hover:text-blue-300">Productos</router-link>
-                    <router-link href="/pokemon" class="hover:text-blue-300">Consulta Pokémon</router-link>
+                    <Link href="/products" class="hover:text-blue-300">Productos</Link>
+                    <Link href="/pokemon" class="hover:text-blue-300">Consulta Pokémon</Link>
                 </nav>
             </div>
         </header>
@@ -22,6 +22,7 @@
 export default {
     name: 'AppLayout',
 };
+import { Link } from '@inertiajs/vue3'
 </script>
 
 <link rel="stylesheet" href="{{ mix('/css/app.css') }}"></link>
