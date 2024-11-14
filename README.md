@@ -124,7 +124,7 @@ curl -X POST http://localhost:8000/api/products \
 Obtener lista de productos:
 
 ```bash
-Copy code
+ 
 curl http://localhost:8000/api/products
 ```
 
@@ -139,6 +139,6 @@ curl -X PUT http://localhost:8000/api/products/1 \
 Eliminar un producto:
 
 ```bash
-Copy code
+ 
 curl -X DELETE http://localhost:8000/api/products/1
 ```
